@@ -1,0 +1,35 @@
+<div class="container">
+  <form [formGroup]="addLeadForm" (ngSubmit)="addLeadData(addLeadForm.value)">
+    <h3>Lead Information</h3>
+    <div class="row">
+      <small *ngIf="isError" class="alert alert-danger">{{ errorMessage }}</small>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" formControlName="name" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="mobileNumber">Mobile:</label>
+          <input type="text" formControlName="mobileNumber" class="form-control" id="mobileNumber">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" formControlName="email" class="form-control" id="email">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <textarea type="textarea" formControlName="address" class="form-control" id="address"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="area">Area:</label>
+          <input type="text" formControlName="area" class="form-control" id="area">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-success margin-top-40">Create Lead</button>
+      </div>
+    </div>
+  </form>
+</div>
